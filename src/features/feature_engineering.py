@@ -6,7 +6,7 @@ import yaml
 
 import src.utils as utils
 
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # logging configure
 logger = utils.configure_logger(name=__name__, log_file="build_features.log")
@@ -28,8 +28,8 @@ def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 def build_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     try:
-        logger.debug("Building Features")
-        vectorizer = CountVectorizer(max_features=params["max_features"])
+        logger.debug("Building Features with tfidf vectorizer")
+        vectorizer = TfidfVectorizer(max_features=params["max_features"])
         train_features = vectorizer.fit_transform(X_train["content"])
         test_features = vectorizer.transform(X_test["content"])
         return pd.DataFrame(train_features.toarray()), pd.DataFrame(test_features.toarray())
