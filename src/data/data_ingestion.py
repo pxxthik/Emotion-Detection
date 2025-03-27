@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 
 
 # logging configure
-logger = utils.configure_logger(__name__)
+logger = utils.configure_logger(__name__, log_file="data_ingestion.log")
 
 
 def load_data(url: str) -> pd.DataFrame:

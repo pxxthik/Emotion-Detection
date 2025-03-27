@@ -12,7 +12,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 # logging configure
-logger = utils.configure_logger(__name__)
+logger = utils.configure_logger(__name__, log_file="preprocessing.log")
 
 
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
