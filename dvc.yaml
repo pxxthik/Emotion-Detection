@@ -1,0 +1,11 @@
+stages:
+  data_ingestion:
+    cmd: python -m src.data.data_ingestion
+    deps:
+    - src/data/data_ingestion.py
+    params:
+    - data_ingestion.random_state
+    - data_ingestion.test_size
+    outs:
+    - data/raw/train.csv
+    - data/raw/test.csv

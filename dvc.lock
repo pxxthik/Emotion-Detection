@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python -m src.data.data_ingestion
+    deps:
+    - path: src/data/data_ingestion.py
+      hash: md5
+      md5: 4559113d7a447c8f15b67c07a5830db9
+      size: 2739
+    params:
+      params.yaml:
+        data_ingestion.random_state: 42
+        data_ingestion.test_size: 0.2
+    outs:
+    - path: data/raw/test.csv
+      hash: md5
+      md5: 6095ad57270b570775c4c8b3c72a04a6
+      size: 626248
+    - path: data/raw/train.csv
+      hash: md5
+      md5: de9527b1da2318e1dd094cafd9b66af6
+      size: 2505818
