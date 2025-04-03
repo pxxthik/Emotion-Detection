@@ -30,3 +30,13 @@ stages:
     outs:
     - data/features/train.csv
     - data/features/test.csv
+  model_building:
+    cmd: python -m src.models.model_building
+    deps:
+    - src/models/model_building.py
+    - data/features/train.csv
+    params:
+    - model_building.n_estimators
+    - model_building.max_depth
+    outs:
+    - models/model.pkl
