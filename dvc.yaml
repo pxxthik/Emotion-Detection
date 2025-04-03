@@ -18,3 +18,15 @@ stages:
     outs:
     - data/interim/train.csv
     - data/interim/test.csv
+  feature_engineering:
+    cmd: python -m src.features.feature_engineering
+    params:
+    - feature_engineering.max_features
+    - feature_engineering.ngram_range
+    deps:
+    - src/features/feature_engineering.py
+    - data/interim/train.csv
+    - data/interim/test.csv
+    outs:
+    - data/features/train.csv
+    - data/features/test.csv

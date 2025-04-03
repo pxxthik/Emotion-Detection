@@ -1,3 +1,6 @@
 data_ingestion:
   random_state: 42
   test_size: 0.2
+feature_engineering:
+  max_features: 100
+  ngram_range: (2,2)
