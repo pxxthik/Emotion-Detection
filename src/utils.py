@@ -10,6 +10,9 @@ def load_params(params_filepath: str, section: str, logger: logging) -> dict:
     try:
         logger.debug("Getting Params")
         with open(params_filepath, "r") as f:
+            if section == "all":
+                params = yaml.safe_load(f)
+                return params
             params = yaml.safe_load(f).get(section, {})
         return params
     except FileNotFoundError as e:

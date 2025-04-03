@@ -40,3 +40,14 @@ stages:
     - model_building.max_depth
     outs:
     - models/model.pkl
+  model_evaluation:
+    cmd: python -m src.models.model_evaluation
+    deps:
+    - src/models/model_evaluation.py
+    - models/model.pkl
+    - data/features/test.csv
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step

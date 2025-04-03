@@ -1,0 +1,12 @@
+{
+    "accuracy": 0.231924882629108,
+    "precision": 0.241286715343995,
+    "recall": 0.0958726613647465,
+    "roc_auc": 0.5367276380184905,
+    "data_ingestion_random_state": 42,
+    "data_ingestion_test_size": 0.2,
+    "feature_engineering_max_features": 100,
+    "feature_engineering_ngram_range": "(2,2)",
+    "model_building_n_estimators": 80,
+    "model_building_max_depth": 4
+}
